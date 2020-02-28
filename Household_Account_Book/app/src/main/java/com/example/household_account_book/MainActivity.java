@@ -165,8 +165,13 @@ public class MainActivity extends AppCompatActivity {
         );
 
         cursor.moveToFirst();
-
         StringBuilder sbuilder = new StringBuilder();
+
+        if(cursor.getCount()==0){
+            textView.setText("データ登録0件");
+            textView.setTextColor(Color.RED);
+            return;
+        }
 
         for (int i = 0; i < cursor.getCount(); i++) {
             sbuilder.append(cursor.getString(0));
@@ -209,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //昇順DB読み込み
+    //降順DB読み込み
     private void downListReadData(){
         if(helper == null){
             helper = new DataBaseHelper(getApplicationContext());
@@ -231,8 +236,13 @@ public class MainActivity extends AppCompatActivity {
         );
 
         cursor.moveToFirst();
-
         StringBuilder sbuilder = new StringBuilder();
+
+        if(cursor.getCount()==0 || cursor.getCount()==1){
+            textView.setText("データ登録1件以下の為、降順できません。");
+            textView.setTextColor(Color.RED);
+            return;
+        }
 
         for (int i = 0; i < cursor.getCount(); i++) {
             sbuilder.append(cursor.getString(0));
@@ -278,6 +288,12 @@ public class MainActivity extends AppCompatActivity {
 
         cursor.moveToFirst();
 
+        if(cursor.getCount()==0 || cursor.getCount()==1){
+            textView.setText("データ登録1件以下の為、昇順できません。");
+            textView.setTextColor(Color.RED);
+            return;
+        }
+
         StringBuilder sbuilder = new StringBuilder();
 
         for (int i = 0; i < cursor.getCount(); i++) {
@@ -290,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
             sbuilder.append(" ");
             cursor.moveToNext();
         }
-        // 忘れずに！
+
         cursor.close();
         Log.d("debug","**********"+sbuilder.toString());
 
