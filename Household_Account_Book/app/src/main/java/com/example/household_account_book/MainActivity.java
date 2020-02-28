@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
             sbuilder.append(" ");
             cursor.moveToNext();
         }
-        // 忘れずに！
+        
         cursor.close();
         Log.d("debug","**********"+sbuilder.toString());
 
