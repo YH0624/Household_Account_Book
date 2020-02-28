@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             readData();
         }
 
-    //DB読み込み
+    //DB読込
     private void readData(){
         if(helper == null){
             helper = new DataBaseHelper(getApplicationContext());
@@ -170,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
         if(cursor.getCount()==0){
             textView.setText("データ登録0件");
             textView.setTextColor(Color.RED);
+            cursor.close();
             return;
         }
 
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             sbuilder.append(" ");
             cursor.moveToNext();
         }
-        
+
         cursor.close();
         Log.d("debug","**********"+sbuilder.toString());
 
@@ -241,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
         if(cursor.getCount()==0 || cursor.getCount()==1){
             textView.setText("データ登録1件以下の為、降順できません。");
             textView.setTextColor(Color.RED);
+            cursor.close();
             return;
         }
 
@@ -254,7 +256,6 @@ public class MainActivity extends AppCompatActivity {
             sbuilder.append(" ");
             cursor.moveToNext();
         }
-
         cursor.close();
         Log.d("debug","**********"+sbuilder.toString());
 
@@ -291,6 +292,7 @@ public class MainActivity extends AppCompatActivity {
         if(cursor.getCount()==0 || cursor.getCount()==1){
             textView.setText("データ登録1件以下の為、昇順できません。");
             textView.setTextColor(Color.RED);
+            cursor.close();
             return;
         }
 
@@ -383,7 +385,6 @@ public class MainActivity extends AppCompatActivity {
         });
         alertDialog.show();
     }
-
 
     //DB削除処理
     private void deleteData(String deleteDate,String deleteValue,String deleteMoney) {
