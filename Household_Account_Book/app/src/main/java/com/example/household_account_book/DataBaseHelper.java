@@ -22,8 +22,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     _ID + " INTEGER PRIMARY KEY," +
-                    COLUMN_NAME_Date + " TEXT,"+
-                    COLUMN_NAME_Value + " TEXT,"+
+                    COLUMN_NAME_Date + " TEXT," +
+                    COLUMN_NAME_Value + " TEXT," +
                     COLUMN_NAME_Money + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES =
