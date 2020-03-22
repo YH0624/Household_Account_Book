@@ -25,7 +25,7 @@
         tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
 
     <Button
-        android:id="@+id/downList"
+        android:id="@+id/desc"
         android:layout_width="61dp"
         android:layout_height="24dp"
         android:layout_marginStart="250dp"
@@ -43,7 +43,7 @@
         tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
 
     <Button
-        android:id="@+id/upList"
+        android:id="@+id/asc"
         android:layout_width="61dp"
         android:layout_height="24dp"
         android:layout_marginStart="175dp"
