@@ -2,7 +2,7 @@
  Household_Account_Book_MainScreen <br>
  <img src="https://github.com/YH0624/Household_Account_Book/blob/master/MainScreen.jpg" >
 ## 開発環境<br>
- Android Studio Ver 3.5.3
+ Android Studio Ver 3.6.1
 
 ## プログラム言語<br>
    JAVA
